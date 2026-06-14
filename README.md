@@ -185,6 +185,20 @@ After getting the template running, try adding:
 
 ---
 
+
+---
+
+## Files...
+
+* events: this is here all files for @bot.event will live here
+* modules: all files for commands and buttons, this is to help managment
+* utils: management for the events and modules, this is mainly where the files will talk to
+* storage: This one is common sence, its will all data, logs, and info lives
+
+---
+
+
+
 ## Contributing
 
 Feel free to fork this repository and build your own version.

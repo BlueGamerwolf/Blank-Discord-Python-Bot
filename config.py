@@ -56,10 +56,16 @@ OWNER_USER_ID = optional_int("OWNER_USER_ID")
 # Optional: role IDs used by permission helpers.
 ADMIN_ROLE_ID = optional_int("ADMIN_ROLE_ID")
 MOD_ROLE_ID = optional_int("MOD_ROLE_ID")
+SUPPORT_ROLE_ID = optional_int("SUPPORT_ROLE_ID")
 
 # Optional: channel IDs used by example events/commands.
 WELCOME_CHANNEL_ID = optional_int("WELCOME_CHANNEL_ID")
 LOG_CHANNEL_ID = optional_int("LOG_CHANNEL_ID")
+TICKET_CATEGORY_ID = optional_int("TICKET_CATEGORY_ID")
+TRANSCRIPT_CATEGORY_ID = optional_int("TRANSCRIPT_CATEGORY_ID")
 
 # Optional: role to give new members when they join.
 MEMBER_ROLE_ID = optional_int("MEMBER_ROLE_ID")
+
+# Optional: default role to add to new ticket channels.
+DEFAULT_ROLE_ID = optional_int("DEFAULT_ROLE_ID")

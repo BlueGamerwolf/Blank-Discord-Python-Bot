@@ -21,6 +21,7 @@ from discord.ext import commands
 
 from config import PREFIX, TOKEN
 from utils.logger import setup_logging
+from events.ticket_buttons import TicketControlView, TicketPanel, ensure_ticket_categories
 
 
 # ---------------------------------------------------------
@@ -100,6 +101,20 @@ def log_registered_commands() -> None:
 load_setup_files("modules")
 load_setup_files("events")
 log_registered_commands()
+
+
+@bot.event
+async def on_ready():
+    if not hasattr(bot, "_ticket_views_loaded"):
+        bot.add_view(TicketPanel())
+        bot.add_view(TicketControlView())
+        bot._ticket_views_loaded = True
+        logger.info("Ticket views loaded safely")
+
+    if not hasattr(bot, "_ticket_categories_loaded"):
+        await ensure_ticket_categories(bot)
+        bot._ticket_categories_loaded = True
+        logger.info("Ticket categories loaded safely")
 
 
 # ---------------------------------------------------------
